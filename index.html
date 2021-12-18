@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="1.css">
+
+<!--SIDEBAR-->
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div id="top" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#top">Top</a>
+  <a href="#">About</a>
+  <a href="#photos">Photos</a>
+</div>
+
+<div id="main">
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("top").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("top").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+<div class="bg-image"></div>
+
+<div class="bg-text">
+  <h1>5PE1</h1>
+  <p>Year 2021</p>
+</div>
+
+
+<div id="photos">
+<!--PHOTOS-->
+ <div style="text-align:center">
+  <h2>Photos</h2>
+ </div>
+</div>
+
+<!-- The four columns -->
+<div class="photos">
+  <div class="Photos">
+    <img src="/images/pntheh.jpg" style="width:20%" onclick="myFunction(this);">
+    <img src="/images/pnnurul.jpg" style="width:20%" onclick="myFunction(this);">
+    <img src="/images/boys.jpg" style="width:16.7%" onclick="myFunction(this);">
+    <img src="/images/girls.jpg" style="width:16.7%" onclick="myFunction(this);">
+    <img src="/images/11.jpg" style="width:15%" onclick="myFunction(this);">
+  </div>
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+
+<script>
+function myFunction(imgs) {
+  // Get the expanded image
+var expandImg = document.getElementById("expandedImg");
+  // Get the image text
+var imgText = document.getElementById("imgtext");
+  // Use the same src in the expanded image as the image being clicked on from the grid
+  expandImg.src = imgs.src;
+  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+  imgText.innerHTML = imgs.alt;
+  // Show the container element (hidden with CSS)
+  expandImg.parentElement.style.display = "block";
+}
+</script>
+
+
+<div id="video" class="Videos">
+    <iframe width="750" height="450" src="https://drive.google.com/file/d/1zuWBibDHoA6XLjA8KCoUlznjU_bzXOfO/preview" type='video/mp4'>
+    </iframe>
+
+</div>
+
+
+</body>
+</html>
