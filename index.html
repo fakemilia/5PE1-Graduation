@@ -1,143 +1,184 @@
 <!DOCTYPE html>
-<html>
-<body>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="1.css">
-
-<!--SIDEBAR-->
-<style>
-body {
-  font-family: "Lato", sans-serif;
-}
-html {
-  scroll-behavior: smooth;
-}
-
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-</style>
-</head>
-<body>
-
-<div id="top" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#top">Top</a>
-  <a href="#">About</a>
-  <a href="#photos">Photos</a>
-</div>
-
-<div id="main">
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-</div>
-
-<script>
-function openNav() {
-  document.getElementById("top").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
-
-function closeNav() {
-  document.getElementById("top").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-}
-</script>
-
-<div class="bg-image"></div>
-
-<div class="bg-text">
-  <h1>5PE1</h1>
-  <p>Year 2021</p>
-</div>
-
-
-<div id="photos">
-<!--PHOTOS-->
- <div style="text-align:center">
-  <h2>Photos</h2>
- </div>
-</div>
-
-<!-- The four columns -->
-<div class="photos">
-  <div class="Photos">
-    <img src="/images/pntheh.jpg" style="width:20%" onclick="myFunction(this);">
-    <img src="/images/pnnurul.jpg" style="width:20%" onclick="myFunction(this);">
-    <img src="/images/boys.jpg" style="width:16.7%" onclick="myFunction(this);">
-    <img src="/images/girls.jpg" style="width:16.7%" onclick="myFunction(this);">
-    <img src="/images/11.jpg" style="width:15%" onclick="myFunction(this);">
-  </div>
-</div>
-
-<div class="container">
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-  <img id="expandedImg" style="width:100%">
-  <div id="imgtext"></div>
-</div>
-
-
-<script>
-function myFunction(imgs) {
-  // Get the expanded image
-var expandImg = document.getElementById("expandedImg");
-  // Get the image text
-var imgText = document.getElementById("imgtext");
-  // Use the same src in the expanded image as the image being clicked on from the grid
-  expandImg.src = imgs.src;
-  // Use the value of the alt attribute of the clickable image as text inside the expanded image
-  imgText.innerHTML = imgs.alt;
-  // Show the container element (hidden with CSS)
-  expandImg.parentElement.style.display = "block";
-}
-</script>
-
-
-<div id="video" class="Videos">
-    <iframe width="750" height="450" src="https://drive.google.com/file/d/1zuWBibDHoA6XLjA8KCoUlznjU_bzXOfO/preview" type='video/mp4'>
-    </iframe>
-
-</div>
-
-
-</body>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>5PE1</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="Description" lang="en" content="open source html and css template">
+      <meta name="author" content="mlp design">
+      <meta name="robots" content="index, follow">
+      <link rel="stylesheet" href="styles.css">
+      <link rel="stylesheet" href="slidy.css">
+   </head>
+   <body>
+      <div id="menu">
+         <nav>
+            <input type="checkbox" id="show-menu" role="button">
+            <label for="show-menu" class="open"><span class="fa fa-bars"></span></label>
+            <label for="show-menu" class="close"><span class="fa fa-times"></span></label>
+            <ul id="topnav">
+               <li><a href="#pageheader">Top</a></li>
+               <li><a href="#about">About</a></li>
+               <li><a href="#">Photos</a></li>
+               <li><a href="#students">Students</a></li>
+            </ul>
+         </nav>
+      </div>
+      <div id="container">
+      <div id="pageheader">
+         <h1>5PE1</h1>
+         <p>Batch 04</p>
+      </div>
+      <div class="section">
+         <div class="pageitem">
+            <div id="slider">
+               <figure>
+                  <img src="\images\fullpic.jpg" alt>
+                  <img src="\images\boys.jpg" alt>
+                  <img src="\images\girls.jpg" alt>
+                  <img src="\images\fullpic.jpg" alt> <!-- note 1st image is also the last -->
+               </figure>
+            </div>
+         </div>
+      </div>
+      <div id="about">
+         <div class="section">
+            <div class="pageitem">
+               <div class="col">
+                  <h2>About</h2>
+                  <p>insert text here</p>
+                  <img src="" style="width: 60px;" alt>
+               </div>
+               <div class="col">
+                  <h2>-</h2>
+                  <p>insert text here</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="students">
+         <div class="section">
+            <div class="student">
+               <div class="pageitem">
+                  <h2>Students</h2>
+                  <a> 1. Adrian Mak 麦家伟
+                     <li><a href="https://www.instagram.com/__waiwaiii__/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 2. Ang Xue Hui 洪雪慧
+                     <li><a href="https://www.instagram.com/xuehui_17/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 3. Beh Kai Jin 马凯进
+                     <li><a href="https://www.instagram.com/kaijin_17/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 4. Brandon Khoo Ee 邱俞
+                  </a>
+                  <h3></h3>
+                  <a> 5. Chan Yuan Yee 陈元瑜
+                     <li><a href="https://www.instagram.com/yuanyee_0302/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 6. Chen Yi Thien 陈于恬
+                     <li><a href="https://www.instagram.com/yithien08/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 7. Chew How Jiet 周浩杰
+                     <li><a href="https://www.instagram.com/hj_04/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  
+                  <audio id="sound1" src="pig.mp3" preload="auto"></audio>
+                  <element onclick="document.getElementById('sound1').play();">8. Chong Ji You 钟劼佑</element>
+                  
+                     <li><a href="https://www.instagram.com/jiyou_0130/"><i class="fa fa-instagram"></i></a></li>
+                  <h3></h3>
+                  <a> 9. Hew Kit Ying 丘洁盈
+                     <li><a href="https://www.instagram.com/kityinghew/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 10. Isaac Ching Hin 程轩
+                     <li><a href="https://www.instagram.com/feng.hua88/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 11. Jessica Loh 骆恩柔
+                     <li><a href="https://www.instagram.com/jessica61_/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 12. Khor Kah Tek 许嘉德
+                     <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 13. Khor Mei San 许美珊
+                     <li><a href="https://www.instagram.com/_meisan3/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 14. Khor Yong Wen 许詠雯
+                     <li><a href="https://www.instagram.com/syzygy_0823/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 15. Lean Kai Yang 连凯阳
+                     <li><a href="https://www.instagram.com/leankaiyang/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 16. Lee Chai Xuan 李彩萱
+                     <li><a href="https://www.instagram.com/_chaixuan/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 17. Lee YiJie 李怡洁
+                     <li><a href="https://www.instagram.com/zerofourins/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 18. Lim Kah Zheng 林嘉政
+                     <li><a href="https://www.instagram.com/_heyyiamkahzheng/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 19. Loh Pei Wen 罗佩汶
+                     <li><a href="https://www.instagram.com/heyy.is.me_/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 20. Qua Yu Yang 柯宇阳
+                     <li><a href="https://www.instagram.com/yuyangqua/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 21. Rebecca Lam 林秀珊
+                     <li><a href="https://www.instagram.com/rebeccalam13/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 22.Saw Zhan Xiang 苏展翔
+                     <li><a href="https://www.instagram.com/zhanxiang693/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 23. Tan Chiu Yin 陈绣云
+                     <li><a href="https://www.instagram.com/_0915chiuyinnn/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 24. Tan Jia Qi 陈家琪
+                     <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 25. Tan Man Hong 陈文康
+                     <li><a href="https://www.instagram.com/manhong_23/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 26. Tan Qing Kai 陈庆凯
+                     <li><a href="https://www.instagram.com/qingkai.dd/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+                  <a> 27. Yap Wei Xuen 叶玮萱
+                     <li><a href="https://www.instagram.com/weixuen__/"><i class="fa fa-instagram"></i></a></li>
+                  </a>
+                  <h3></h3>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="section">
+      <div class="pageitem">
+      <div class="col">
+         <h2>End</h2>
+      </div>
+   </body>
 </html>
